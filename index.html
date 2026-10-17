@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Castlevania 8-Bit: Возвращение Поместья</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="game-wrapper">
+    <header class="hud-header">
+      <div class="title-row">
+        <h1>🧛 CASTLEVANIA: RETURN OF THE MANOR</h1>
+        <span id="zone-indicator" class="zone-badge">УРОВЕНЬ 1.1: СКЛЕП ПРОБУЖДЕНИЯ</span>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-box">ЗДОРОВЬЕ: <span id="hp-val" style="color: #ff3b56;">♥♥♥</span></div>
+        <div class="stat-box">ОЧКИ: <span id="score-val">0</span></div>
+        <div class="stat-box">РЕЛИКВИИ: <span id="items-val">0 / 3</span></div>
+        <div class="stat-box">ЧЕКПОИНТ: <span id="checkpoint-val">СКЛЕП</span></div>
+        <div class="stat-box gold">РЕКОРД: <span id="best-val">0</span></div>
+      </div>
+
+      <div class="relics-bar">
+        <div id="slot-sword" class="relic-slot" title="Фамильный меч для ударов в 4 стороны">
+          ⚔ Меч Кровопийца: <span>У ГРОБА</span>
+        </div>
+        <div id="slot-chalice" class="relic-slot" title="Увеличивает прыжок и скорость">
+          🍷 Чаша Крови: <span>НЕТ</span>
+        </div>
+        <div id="slot-cloak" class="relic-slot" title="Рывок тумана на Shift / E">
+          🦇 Плащ Тумана: <span>НЕТ</span>
+        </div>
+        <div id="slot-ring" class="relic-slot" title="Снимает печать с ворот Тронного зала">
+          💍 Перстень Рода: <span>НЕТ</span>
+        </div>
+      </div>
+
+      <div class="controls-toolbar">
+        <button id="btn-start" class="retro-btn primary">▶ Старт</button>
+        <button id="btn-pause" class="retro-btn">⏸ Пауза</button>
+        <button id="btn-restart" class="retro-btn danger">↻ С чекпоинта / Заново</button>
+        <button id="btn-mute" class="retro-btn sound-on">🔊 Звук: ВКЛ</button>
+        <button id="btn-cam-debug" class="retro-btn debug">📷 Камера: Инфо</button>
+      </div>
+    </header>
+
+    <main class="canvas-container">
+      <canvas id="game-canvas" width="800" height="450"></canvas>
+    </main>
+
+    <section class="touch-controls" aria-label="Мобильное управление">
+      <div class="touch-dpad">
+        <button id="touch-left" class="touch-btn">◀</button>
+        <button id="touch-up" class="touch-btn">▲ ВВЕРХ</button>
+        <button id="touch-down" class="touch-btn">▼ ВНИЗ</button>
+        <button id="touch-right" class="touch-btn">▶</button>
+      </div>
+      <div class="touch-actions">
+        <button id="touch-attack" class="touch-btn action-attack">⚔ УДАР</button>
+        <button id="touch-dash" class="touch-btn action-dash">🦇 РЫВОК</button>
+        <button id="touch-jump" class="touch-btn action-jump">ПРЫЖОК</button>
+      </div>
+    </section>
+
+    <footer class="help-footer">
+      <p>
+        <strong>Движение:</strong> <kbd>A</kbd>/<kbd>D</kbd> |
+        <strong>Прыжок:</strong> <kbd>Space</kbd>/<kbd>W</kbd> |
+        <strong>Меч (4 стороны):</strong> <kbd>J</kbd>/<kbd>Z</kbd> (+<kbd>W</kbd> вверх, +<kbd>S</kbd> вниз в прыжке) |
+        <strong>Рывок:</strong> <kbd>Shift</kbd>/<kbd>E</kbd> |
+        <strong>Звук Вкл/Выкл:</strong> <kbd>M</kbd>
+      </p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

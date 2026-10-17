@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #07050c;
+  background-image: radial-gradient(circle at 50% 15%, #1f1129 0%, #07050c 80%);
+  color: #e6dfd5;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 860px;
+  background: #120e1a;
+  border: 4px solid #6e1a2b;
+  box-shadow: 0 0 0 4px #2a1829, 0 16px 40px rgba(0, 0, 0, 0.9);
+  padding: 12px;
+}
+
+.hud-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 2px dashed #4a2333;
+  padding-bottom: 6px;
+}
+
+.title-row h1 {
+  font-size: 1.1rem;
+  color: #ff3b56;
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 1px;
+}
+
+.zone-badge {
+  background: #2b1528;
+  border: 2px solid #a82039;
+  color: #ffd166;
+  padding: 4px 8px;
+  font-size: 0.78rem;
+  font-weight: bold;
+}
+
+.stats-bar,
+.relics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.stat-box {
+  background: #1a1526;
+  border: 2px solid #3a3154;
+  padding: 5px 8px;
+  font-weight: bold;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.stat-box.gold {
+  border-color: #b8860b;
+  color: #ffd700;
+}
+
+.relic-slot {
+  background: #161220;
+  border: 2px solid #2e293d;
+  color: #7c748e;
+  padding: 5px 6px;
+  font-size: 0.74rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.relic-slot.active {
+  background: #291826;
+  border-color: #f8d870;
+  color: #fff3c4;
+  box-shadow: inset 0 0 8px rgba(248, 216, 112, 0.35);
+}
+
+.controls-toolbar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.retro-btn {
+  flex: 1;
+  min-width: 110px;
+  background: #272138;
+  color: #f2e9e4;
+  border: 2px solid #594e7a;
+  padding: 7px 10px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 3px 0 #0b0912;
+}
+
+.retro-btn:hover {
+  background: #362d4d;
+}
+
+.retro-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0b0912;
+}
+
+.retro-btn.primary {
+  background: #781727;
+  border-color: #d62839;
+}
+
+.retro-btn.danger {
+  background: #421c24;
+  border-color: #9e2a2b;
+}
+
+.retro-btn.sound-on {
+  background: #1b4332;
+  border-color: #52b788;
+  color: #d8f3dc;
+}
+
+.retro-btn.sound-off {
+  background: #2a2433;
+  border-color: #5c5366;
+  color: #9d94a8;
+}
+
+.retro-btn.debug {
+  background: #1b2f33;
+  border-color: #3d898d;
+  color: #a8f9ff;
+}
+
+.canvas-container {
+  width: 100%;
+  background: #050408;
+  border: 3px solid #3c3454;
+  display: flex;
+  justify-content: center;
+}
+
+#game-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.touch-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.touch-dpad,
+.touch-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.touch-btn {
+  background: #231d33;
+  color: #e6dfd5;
+  border: 2px solid #6c5b8e;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.touch-btn:active,
+.touch-btn.pressed {
+  background: #a81020;
+  border-color: #ffccd5;
+}
+
+.action-attack {
+  background: #7a1c1c;
+  border-color: #ff4d4d;
+}
+
+.action-jump {
+  background: #5b1838;
+  border-color: #d93870;
+}
+
+.action-dash {
+  background: #282454;
+  border-color: #7b73d6;
+}
+
+.help-footer {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #a99fb8;
+  text-align: center;
+  line-height: 1.45;
+}
+
+kbd {
+  background: #251f33;
+  border: 1px solid #594e7a;
+  padding: 1px 5px;
+  color: #ffd166;
+}
+
+@media (max-width: 680px) {
+  .stats-bar,
+  .relics-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .touch-btn {
+    padding: 12px 10px;
+    font-size: 0.74rem;
+  }
+}
